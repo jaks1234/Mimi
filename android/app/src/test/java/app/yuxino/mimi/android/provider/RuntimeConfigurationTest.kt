@@ -149,10 +149,13 @@ class RuntimeConfigurationTest {
         val expected = mapOf(ServiceProvider.AZURE to "azureOpenAI", ServiceProvider.TENCENT to "tencentCloud", ServiceProvider.BAIDU to "baiduTranslate")
         for (provider in ServiceProvider.entries) {
             val values = provider.fields.associate { it.id to "synthetic-${it.id}" }
-            val config = buildRuntimeConfiguration(ServiceConfiguration(provider, values), TranslationConfiguration(provider = TextTranslationProvider.BUILTIN), "auto", "zh", "lite")
+            // Custom recognition never follows the service for translation: with
+            // BUILTIN captions stay original and textCredentials stay absent.
+            val route = if (provider == ServiceProvider.CUSTOM_OPENAI) TextTranslationProvider.NONE else TextTranslationProvider.BUILTIN
+            val config = buildRuntimeConfiguration(ServiceConfiguration(provider, values), TranslationConfiguration(provider = route), "auto", "zh", "lite")
             assertEquals(provider.wireProvider, config.getString("provider"))
             val credentials = config.getJSONObject("credentials")
-            assertEquals(expected[provider] ?: "apiKey", credentials.getString("kind"))
+            assertEquals(expected[provider] ?: if (provider == ServiceProvider.CUSTOM_OPENAI) "customSpeech" else "apiKey", credentials.getString("kind"))
             for ((field, value) in values) assertEquals(value, credentials.getString(field))
             assertEquals("system", config.getJSONObject("networkProxy").getString("mode"))
         }

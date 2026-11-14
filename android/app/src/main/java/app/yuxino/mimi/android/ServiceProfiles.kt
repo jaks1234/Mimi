@@ -14,7 +14,8 @@ data class ServiceProfile(val id: String, val name: String, val provider: Servic
 internal class ProfileContents(
     val speech: ServiceConfiguration,
     val selectedTranslation: TextTranslationProvider = if (speech.provider == ServiceProvider.XAI && speech.usesIndependentTextTranslation)
-        TextTranslationProvider.XAI else if (speech.provider.supportsSpeechTranslationMode) TextTranslationProvider.OPENAI_COMPATIBLE
+        TextTranslationProvider.XAI else if (speech.provider == ServiceProvider.CUSTOM_OPENAI) TextTranslationProvider.NONE
+        else if (speech.provider.supportsSpeechTranslationMode) TextTranslationProvider.OPENAI_COMPATIBLE
         else TextTranslationProvider.BUILTIN,
     val translations: Map<TextTranslationProvider, TranslationConfiguration> = emptyMap(),
     val qwenMtModel: String = "lite",

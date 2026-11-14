@@ -63,8 +63,10 @@
     <string name="guide_name_tencent">Tencent Cloud</string>
     <string name="guide_name_baidu">Baidu Traduction</string>
     <string name="guide_name_xai">xAI Grok</string>
+    <string name="guide_name_custom_openai">Reconnaissance personnalisée</string>
     <string name="guide_storage_unavailable">Le stockage sécurisé est indisponible. Les identifiants n’ont pas été enregistrés. Réessayez plus tard et n’incluez pas de clés API dans vos retours.</string>
     <string name="guide_field_endpoint">Point d’accès de la ressource</string>
+    <string name="guide_field_ws_endpoint">Adresse WebSocket</string>
     <string name="guide_field_deployment">Nom du déploiement de traduction</string>
     <string name="guide_field_transcription">Nom du déploiement de transcription</string>
     <string name="guide_reopen_sharing">Activer le partage d’écran</string>

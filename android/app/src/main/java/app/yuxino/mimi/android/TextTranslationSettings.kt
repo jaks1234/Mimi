@@ -34,6 +34,7 @@ internal class TextTranslationSettings(private val activity: AppCompatActivity, 
     private var selected = (editorDraft?.selected ?: if (profileId == null) {
         when {
             speechProvider == ServiceProvider.XAI -> TextTranslationProvider.XAI
+            speechProvider == ServiceProvider.CUSTOM_OPENAI -> TextTranslationProvider.NONE
             speechProvider.supportsSpeechTranslationMode -> TextTranslationProvider.OPENAI_COMPATIBLE
             else -> TextTranslationProvider.BUILTIN
         }

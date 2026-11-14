@@ -63,8 +63,10 @@
     <string name="guide_name_tencent">Tencent Cloud</string>
     <string name="guide_name_baidu">Baidu Translate</string>
     <string name="guide_name_xai">xAI Grok</string>
+    <string name="guide_name_custom_openai">Своё распознавание</string>
     <string name="guide_storage_unavailable">Безопасное хранилище недоступно. Учётные данные не сохранены. Повторите попытку позже; не включайте ключи API в сообщения для поддержки.</string>
     <string name="guide_field_endpoint">Конечная точка ресурса</string>
+    <string name="guide_field_ws_endpoint">Адрес WebSocket</string>
     <string name="guide_field_deployment">Имя развёртывания перевода</string>
     <string name="guide_field_transcription">Имя развёртывания распознавания речи</string>
     <string name="guide_reopen_sharing">Включить демонстрацию экрана</string>

@@ -62,8 +62,10 @@
     <string name="guide_name_tencent">Tencent Cloud</string>
     <string name="guide_name_baidu">Baidu Translate</string>
     <string name="guide_name_xai">xAI Grok</string>
+    <string name="guide_name_custom_openai">การรู้จำเสียงแบบกำหนดเอง</string>
     <string name="guide_storage_unavailable">พื้นที่จัดเก็บที่ปลอดภัยไม่พร้อมใช้งาน ยังไม่ได้บันทึกข้อมูลรับรอง ลองใหม่ภายหลัง อย่าใส่ API key ในข้อเสนอแนะ</string>
     <string name="guide_field_endpoint">ปลายทางทรัพยากร</string>
+    <string name="guide_field_ws_endpoint">ที่อยู่ WebSocket</string>
     <string name="guide_field_deployment">ชื่อ deployment การแปล</string>
     <string name="guide_field_transcription">ชื่อ deployment การถอดเสียง</string>
     <string name="guide_reopen_sharing">เปิดการแชร์หน้าจอ</string>

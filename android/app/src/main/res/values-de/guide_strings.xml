@@ -63,8 +63,10 @@
     <string name="guide_name_tencent">Tencent Cloud</string>
     <string name="guide_name_baidu">Baidu Translate</string>
     <string name="guide_name_xai">xAI Grok</string>
+    <string name="guide_name_custom_openai">Eigene Erkennung</string>
     <string name="guide_storage_unavailable">Sicherer Speicher nicht verfügbar. Zugangsdaten wurden nicht gespeichert. Später erneut versuchen; keine API-Schlüssel in Rückmeldungen angeben.</string>
     <string name="guide_field_endpoint">Ressourcenendpunkt</string>
+    <string name="guide_field_ws_endpoint">WebSocket-Adresse</string>
     <string name="guide_field_deployment">Übersetzungsbereitstellung</string>
     <string name="guide_field_transcription">Transkriptionsbereitstellung</string>
     <string name="guide_reopen_sharing">Bildschirmfreigabe aktivieren</string>

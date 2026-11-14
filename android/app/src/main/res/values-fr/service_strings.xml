@@ -9,5 +9,6 @@
     <string name="service_secret_saved">Enregistré · laisser vide pour conserver la valeur</string>
     <string name="service_required">Obligatoire</string>
     <string name="service_invalid">Configuration incorrecte. Vérifiez le point d’accès et les identifiants.</string>
+    <string name="custom_speech_invalid">Adresse ou modèle de reconnaissance personnalisée invalide. Saisissez une adresse wss:// complète sans paramètres de requête et un ID de modèle valide.</string>
     <string name="service_save_failed">Impossible d’enregistrer. Réessayez.</string>
 </resources>

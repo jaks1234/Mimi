@@ -9,5 +9,6 @@
     <string name="service_secret_saved">저장됨 · 비워 두면 기존 값 유지</string>
     <string name="service_required">필수 항목</string>
     <string name="service_invalid">설정이 올바르지 않습니다. 엔드포인트와 인증 정보 항목을 확인하세요.</string>
+    <string name="custom_speech_invalid">사용자 지정 인식 주소 또는 모델이 잘못되었습니다. 쿼리 매개변수 없는 전체 wss:// 주소와 유효한 모델 ID를 입력하세요.</string>
     <string name="service_save_failed">저장하지 못했습니다. 다시 시도하세요.</string>
 </resources>

@@ -62,8 +62,10 @@
     <string name="guide_name_tencent">Tencent Cloud</string>
     <string name="guide_name_baidu">Baidu Translate</string>
     <string name="guide_name_xai">xAI Grok</string>
+    <string name="guide_name_custom_openai">Custom Recognition</string>
     <string name="guide_storage_unavailable">Secure storage is unavailable. Credentials were not saved. Retry later; keep API keys out of feedback.</string>
     <string name="guide_field_endpoint">Resource endpoint</string>
+    <string name="guide_field_ws_endpoint">WebSocket address</string>
     <string name="guide_field_deployment">Translation deployment name</string>
     <string name="guide_field_transcription">Transcription deployment name</string>
     <string name="guide_reopen_sharing">Turn on screen sharing</string>

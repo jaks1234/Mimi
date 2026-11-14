@@ -8,5 +8,6 @@
     <string name="service_secret_saved">Saved · leave blank to keep the existing value</string>
     <string name="service_required">Required</string>
     <string name="service_invalid">Invalid configuration. Check the endpoint and credential fields.</string>
+    <string name="custom_speech_invalid">Custom recognition address or model is invalid. Enter a full wss:// address without query parameters and a valid model ID.</string>
     <string name="service_save_failed">Could not save. Please retry.</string>
 </resources>

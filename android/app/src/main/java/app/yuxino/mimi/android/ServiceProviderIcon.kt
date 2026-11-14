@@ -12,6 +12,7 @@ internal fun serviceProviderIcon(provider: ServiceProvider): Int = when (provide
     ServiceProvider.TENCENT -> R.drawable.ic_provider_tencent
     ServiceProvider.BAIDU -> R.drawable.ic_provider_baidu
     ServiceProvider.XAI -> R.drawable.ic_provider_xai
+    ServiceProvider.CUSTOM_OPENAI -> R.drawable.ic_service_languages
 }
 
 internal fun translationProviderIcon(provider: app.yuxino.mimi.android.provider.TextTranslationProvider): Int = when (provider) {

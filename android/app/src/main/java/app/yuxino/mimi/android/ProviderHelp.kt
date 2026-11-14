@@ -37,6 +37,9 @@ internal fun providerHelp(provider: ServiceProvider): ProviderHelp = when (provi
     ServiceProvider.XAI -> ProviderHelp(R.string.guide_help_xai,
         "https://docs.x.ai/developers/quickstart",
         "https://docs.x.ai/developers/pricing")
+    ServiceProvider.CUSTOM_OPENAI -> ProviderHelp(R.string.guide_help_custom_openai,
+        "https://platform.openai.com/docs/guides/realtime",
+        "https://platform.openai.com/docs/pricing")
 }
 
 internal fun providerTitle(context: android.content.Context, provider: ServiceProvider): String {
@@ -62,6 +65,7 @@ internal fun speechProviderName(context: android.content.Context, provider: Serv
     ServiceProvider.TENCENT -> R.string.guide_name_tencent
     ServiceProvider.BAIDU -> R.string.guide_name_baidu
     ServiceProvider.XAI -> R.string.guide_name_xai
+    ServiceProvider.CUSTOM_OPENAI -> R.string.guide_name_custom_openai
 })
 
 /** Compact mobile identity; model details remain in service settings. */
@@ -84,4 +88,5 @@ internal fun providerDescription(context: android.content.Context, provider: Ser
     ServiceProvider.TENCENT -> R.string.guide_detail_tencent
     ServiceProvider.BAIDU -> R.string.guide_detail_baidu
     ServiceProvider.XAI -> R.string.guide_detail_xai
+    ServiceProvider.CUSTOM_OPENAI -> R.string.guide_detail_custom_openai
 })

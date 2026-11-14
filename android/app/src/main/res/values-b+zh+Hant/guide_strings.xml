@@ -62,8 +62,10 @@
     <string name="guide_name_tencent">騰訊雲</string>
     <string name="guide_name_baidu">百度翻譯</string>
     <string name="guide_name_xai">xAI Grok</string>
+    <string name="guide_name_custom_openai">自訂辨識</string>
     <string name="guide_storage_unavailable">系統安全儲存暫不可用。憑證沒有儲存，請稍後重試；不要把金鑰貼到回饋中。</string>
     <string name="guide_field_endpoint">資源地址</string>
+    <string name="guide_field_ws_endpoint">WebSocket 位址</string>
     <string name="guide_field_deployment">翻譯部署名稱</string>
     <string name="guide_field_transcription">轉寫部署名稱</string>
     <string name="guide_reopen_sharing">重新開啟螢幕共享</string>

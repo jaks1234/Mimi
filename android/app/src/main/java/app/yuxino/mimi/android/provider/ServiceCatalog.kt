@@ -30,7 +30,10 @@ enum class ServiceProvider(
     BAIDU("baidu", "百度翻译", "实时语音翻译", 16000,
         listOf(CredentialField("appId", "AppID", false), CredentialField("appKey", "AppKey"))),
     XAI("xai", "xAI Grok", "Grok Voice · 按语音轮次翻译", 24000,
-        listOf(CredentialField("apiKey", "API Key")), "wss://api.x.ai/v1/realtime", "grok-voice-latest");
+        listOf(CredentialField("apiKey", "API Key")), "wss://api.x.ai/v1/realtime", "grok-voice-latest"),
+    CUSTOM_OPENAI("customOpenAIASR", "自定义识别", "OpenAI Realtime 兼容 · 独立转写", 24000,
+        listOf(CredentialField("endpoint", "WebSocket 地址", false), CredentialField("model", "识别模型", false),
+            CredentialField("apiKey", "API Key")), "", "");
 
     val wireProvider: String get() = when (this) {
         DASHSCOPE -> "alibabaCloud"
@@ -41,6 +44,7 @@ enum class ServiceProvider(
         TENCENT -> "tencentCloud"
         BAIDU -> "baiduTranslate"
         XAI -> "xAIRealtime"
+        CUSTOM_OPENAI -> "customOpenAIASR"
     }
     val sources: List<String> get() = sourcesForTranslation(TextTranslationProvider.BUILTIN)
     val targets: List<String> get() = targetsForTranslation(TextTranslationProvider.BUILTIN)
@@ -49,7 +53,7 @@ enum class ServiceProvider(
 
     private fun usesIndependentTranslation(alibabaRealtimeMode: String, xaiSpeechMode: String, speechTranslationMode: String): Boolean =
         this == DASHSCOPE && alibabaRealtimeMode != "liveTranslate" || this == XAI && xaiSpeechMode == "asrMt" ||
-            supportsSpeechTranslationMode && speechTranslationMode == "asrMt"
+            supportsSpeechTranslationMode && speechTranslationMode == "asrMt" || this == CUSTOM_OPENAI
 
     private fun route(translation: TextTranslationProvider, alibabaRealtimeMode: String, xaiSpeechMode: String, speechTranslationMode: String): String =
         if (usesIndependentTranslation(alibabaRealtimeMode, xaiSpeechMode, speechTranslationMode)) translation.runtimeRoute() else "followService"
@@ -57,7 +61,6 @@ enum class ServiceProvider(
     private fun originalOnly(translation: TextTranslationProvider, alibabaRealtimeMode: String, xaiSpeechMode: String, speechTranslationMode: String): Boolean =
         usesIndependentTranslation(alibabaRealtimeMode, xaiSpeechMode, speechTranslationMode) && (translation == TextTranslationProvider.NONE ||
             this == XAI && translation == TextTranslationProvider.BUILTIN)
-
     private fun runtimeTarget(target: String, translation: TextTranslationProvider, alibabaRealtimeMode: String, xaiSpeechMode: String, speechTranslationMode: String): String =
         if (originalOnly(translation, alibabaRealtimeMode, xaiSpeechMode, speechTranslationMode)) "original" else target
 
@@ -95,6 +98,15 @@ enum class ServiceProvider(
         fun fromId(id: String): ServiceProvider = entries.firstOrNull { it.id == id } ?: DASHSCOPE
     }
 }
+
+/** Custom recognition routes audio to an OpenAI-Realtime-compatible ASR service and
+ *  every translation route to an independently configured text service. Shared Rust
+ *  owns the wire contract: `{"kind":"customSpeech","endpoint","model","apiKey"}`. */
+internal fun customRuntimeCredentials(configuration: ServiceConfiguration): JSONObject = JSONObject()
+    .put("kind", "customSpeech")
+    .put("endpoint", configuration.value("endpoint").trim())
+    .put("model", configuration.value("model").trim())
+    .put("apiKey", configuration.value("apiKey").trim())
 
 private fun JSONObject.strings(key: String): List<String> = getJSONArray(key).let { values ->
     (0 until values.length()).map(values::getString)
@@ -135,6 +147,7 @@ internal fun ServiceConfiguration.runtimeCredentials(): JSONObject {
             .put("transcriptionDeployment", value("transcriptionDeployment")).put("apiKey", value("apiKey"))
         ServiceProvider.TENCENT -> credential("tencentCloud").put("appId", value("appId")).put("secretId", value("secretId")).put("secretKey", value("secretKey"))
         ServiceProvider.BAIDU -> credential("baiduTranslate").put("appId", value("appId")).put("appKey", value("appKey"))
+        ServiceProvider.CUSTOM_OPENAI -> customRuntimeCredentials(this)
         else -> credential("apiKey").put("apiKey", value("apiKey"))
     }
 }
@@ -195,7 +208,7 @@ class ServiceConfiguration(val provider: ServiceProvider, val credentials: Map<S
     val usesAlibabaLiveTranslate: Boolean get() = provider == ServiceProvider.DASHSCOPE && alibabaRealtimeMode == "liveTranslate"
     val usesIndependentTextTranslation: Boolean get() = provider == ServiceProvider.DASHSCOPE && !usesAlibabaLiveTranslate ||
         provider == ServiceProvider.XAI && xaiSpeechMode == "asrMt" ||
-        provider.supportsSpeechTranslationMode && speechTranslationMode == "asrMt"
+        provider.supportsSpeechTranslationMode && speechTranslationMode == "asrMt" || provider == ServiceProvider.CUSTOM_OPENAI
     fun originalOnly(translation: TextTranslationProvider): Boolean = usesIndependentTextTranslation &&
         (translation == TextTranslationProvider.NONE || provider == ServiceProvider.XAI && translation == TextTranslationProvider.BUILTIN)
     fun value(field: String): String = credentials[field].orEmpty()

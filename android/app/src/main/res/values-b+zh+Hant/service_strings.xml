@@ -9,5 +9,6 @@
     <string name="service_secret_saved">已儲存 · 留空保留原憑證</string>
     <string name="service_required">請填寫此項</string>
     <string name="service_invalid">設定格式不正確，請檢查資源地址和憑證欄位。</string>
+    <string name="custom_speech_invalid">自訂辨識位址或模型無效。請填寫完整 wss:// 位址（不含查詢參數）和有效模型 ID。</string>
     <string name="service_save_failed">未能儲存，請重試。</string>
 </resources>

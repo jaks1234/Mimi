@@ -9,5 +9,6 @@
     <string name="service_secret_saved">Сохранено · оставьте поле пустым, чтобы сохранить текущее значение</string>
     <string name="service_required">Обязательно</string>
     <string name="service_invalid">Недопустимая конфигурация. Проверьте конечную точку и поля учётных данных.</string>
+    <string name="custom_speech_invalid">Адрес или модель пользовательского распознавания недействительны. Введите полный адрес wss:// без параметров запроса и действительный ID модели.</string>
     <string name="service_save_failed">Не удалось сохранить. Повторите попытку.</string>
 </resources>

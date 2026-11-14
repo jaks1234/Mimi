@@ -8,5 +8,6 @@
     <string name="service_secret_saved">保存済み · 空欄で元の値を保持</string>
     <string name="service_required">入力してください</string>
     <string name="service_invalid">設定形式が正しくありません。接続先と認証情報を確認してください。</string>
+    <string name="custom_speech_invalid">カスタム音声認識のアドレスまたはモデルが無効です。クエリパラメーターなしの完全な wss:// アドレスと有効なモデル ID を入力してください。</string>
     <string name="service_save_failed">保存できませんでした。再試行してください。</string>
 </resources>

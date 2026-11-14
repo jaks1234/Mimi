@@ -127,7 +127,7 @@ class ServiceSettingsActivity : AppCompatActivity() {
         }
         provider.fields.forEach { field ->
             val title = when (field.id) {
-                "endpoint" -> getString(R.string.guide_field_endpoint)
+                "endpoint" -> getString(if (provider == ServiceProvider.CUSTOM_OPENAI) R.string.guide_field_ws_endpoint else R.string.guide_field_endpoint)
                 "deployment" -> getString(R.string.guide_field_deployment)
                 "transcriptionDeployment" -> getString(R.string.guide_field_transcription)
                 else -> field.label
@@ -138,7 +138,11 @@ class ServiceSettingsActivity : AppCompatActivity() {
                     ServiceSettingsUi.fieldLabel(pair.first,getString(R.string.translation_saved_field,title))
                     pair.first.placeholderText=getString(R.string.service_secret_saved)
                 }
-            } else pair.second.setText(saved.value(field.id))
+            } else {
+                pair.second.setText(saved.value(field.id))
+                if (provider == ServiceProvider.CUSTOM_OPENAI && field.id == "endpoint" && saved.value(field.id).isBlank())
+                    pair.first.placeholderText = "wss://api.openai.com/v1/realtime"
+            }
             editorDraft?.speechValues?.get(field.id)?.let { pair.second.setText(it) }
             inputs[field.id]=pair
             val keyField = when (provider) {
@@ -286,7 +290,13 @@ class ServiceSettingsActivity : AppCompatActivity() {
                     inputs.getValue(field.id).first.error = getString(R.string.service_required)
                 }
             }
-            status.setText(R.string.service_invalid); status.visibility = View.VISIBLE
+            if (provider == ServiceProvider.CUSTOM_OPENAI && error is IllegalArgumentException && error.message == "invalid_credentials_draft") {
+                inputs.getValue("endpoint").first.error =
+                    if (values.getValue("endpoint").isBlank()) getString(R.string.service_required) else getString(R.string.custom_speech_invalid)
+                inputs.getValue("model").first.error =
+                    if (values.getValue("model").isBlank()) getString(R.string.service_required) else getString(R.string.custom_speech_invalid)
+            }
+            status.setText(if (provider == ServiceProvider.CUSTOM_OPENAI) R.string.custom_speech_invalid else R.string.service_invalid); status.visibility = View.VISIBLE
             null
         }
     }

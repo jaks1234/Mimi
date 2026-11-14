@@ -9,6 +9,7 @@
     <string name="guide_detail_tencent">Tencent Cloud가 음성을 실시간으로 인식하고 번역합니다.\n번역 서비스만 별도로 변경할 수 없습니다.</string>
     <string name="guide_detail_baidu">Baidu가 음성을 실시간으로 인식하고 번역합니다.\n번역 서비스만 별도로 변경할 수 없습니다.</string>
     <string name="guide_detail_xai">xAI 스트리밍 음성 인식에 원하는 텍스트 번역 서비스를 별도로 선택할 수 있습니다.\n말이 멈춘 뒤 번역하는 Grok Voice도 선택할 수 있습니다.</string>
+    <string name="guide_detail_custom_openai">OpenAI Realtime 전사와 호환되는 사용자 지정 음성 서비스를 연결합니다.\n주소와 인식 모델을 입력하고 텍스트 번역 서비스는 별도로 선택합니다.</string>
     <string name="guide_help_dashscope">Model Studio를 활성화하고 API 키를 만드세요. 동시통역에는 베이징 워크스페이스 ID도 필요합니다.</string>
     <string name="guide_help_openai">Realtime 접근 권한이 있는 OpenAI API 프로젝트와 키를 생성하세요. ChatGPT 구독에는 API 사용량이 포함되지 않습니다.</string>
     <string name="guide_help_gemini">Google AI Studio에서 Gemini API 키를 생성하고 프로젝트에서 Live API를 사용할 수 있는지 확인하세요.</string>
@@ -17,6 +18,7 @@
     <string name="guide_help_tencent">실시간 음성 번역에는 계정의 AppID와 같은 계정에서 발급한 SecretID / SecretKey가 필요합니다. AppID는 계정 정보에서 확인하며 UIN과 다릅니다. 키 쌍은 CAM API 키에서 확인하세요. ASR 콘솔에서 서비스를 활성화하세요. Hunyuan 모델 API 키 하나로는 이 API를 인증할 수 없습니다. 종량제도 직접 활성화해야 합니다.</string>
     <string name="guide_help_baidu">Baidu AI Cloud에서 실시간 음성 번역 권한이 있는 기계 번역 앱을 생성하세요. AppKey는 앱의 API Key이며 Secret Key가 아닙니다.</string>
     <string name="guide_help_xai">xAI 콘솔에서 API 키를 얻고 사용할 xAI 모델의 권한과 잔액을 확인하세요. Grok 텍스트 번역 키는 별도로 저장하며, 인식과 같은 기존 키 또는 서로 다른 키를 사용할 수 있습니다.</string>
+    <string name="guide_help_custom_openai">서비스에서 제공하는 전체 WebSocket 주소(wss://, 쿼리 매개변수 없음), 인식 모델 ID, API 키를 입력합니다. 서비스는 24 kHz 모노 PCM16과 session.update, input_audio_buffer, transcription 이벤트를 지원해야 합니다. ws://는 로컬 주소만 허용됩니다. API 키는 휴대전화 보안 저장소에 저장됩니다.</string>
     <string name="profiles_alibaba_mode">인식 및 번역</string>
     <string name="profiles_alibaba_asr_mt">ASR + MT</string>
     <string name="profiles_alibaba_live">동시통역</string>

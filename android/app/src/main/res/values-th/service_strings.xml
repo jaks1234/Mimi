@@ -8,5 +8,6 @@
     <string name="service_secret_saved">บันทึกแล้ว · เว้นว่างเพื่อใช้ค่าเดิม</string>
     <string name="service_required">จำเป็น</string>
     <string name="service_invalid">การตั้งค่าไม่ถูกต้อง ตรวจสอบปลายทางและช่องข้อมูลรับรอง</string>
+    <string name="custom_speech_invalid">ที่อยู่หรือโมเดลการรู้จำเสียงแบบกำหนดเองไม่ถูกต้อง กรอกที่อยู่ wss:// แบบเต็มโดยไม่มีพารามิเตอร์ query และรหัสโมเดลที่ถูกต้อง</string>
     <string name="service_save_failed">บันทึกไม่ได้ ลองอีกครั้ง</string>
 </resources>

@@ -62,8 +62,10 @@
     <string name="guide_name_tencent">Tencent Cloud</string>
     <string name="guide_name_baidu">Baidu Translate</string>
     <string name="guide_name_xai">xAI Grok</string>
+    <string name="guide_name_custom_openai">カスタム音声認識</string>
     <string name="guide_storage_unavailable">端末の安全なストレージを使用できません。認証情報は保存されていません。後で再試行し、API Key を問い合わせに貼り付けないでください。</string>
     <string name="guide_field_endpoint">リソースの接続先</string>
+    <string name="guide_field_ws_endpoint">WebSocket アドレス</string>
     <string name="guide_field_deployment">翻訳のデプロイ名</string>
     <string name="guide_field_transcription">文字起こしのデプロイ名</string>
     <string name="guide_reopen_sharing">画面共有をオンにする</string>

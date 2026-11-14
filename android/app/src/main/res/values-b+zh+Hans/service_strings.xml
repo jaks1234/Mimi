@@ -9,5 +9,6 @@
     <string name="service_secret_saved">已保存 · 留空保留原凭证</string>
     <string name="service_required">请填写此项</string>
     <string name="service_invalid">配置格式不正确，请检查资源地址和凭证字段。</string>
+    <string name="custom_speech_invalid">自定义识别地址或模型无效。请填写完整 wss:// 地址（不含查询参数）和有效模型 ID。</string>
     <string name="service_save_failed">未能保存，请重试。</string>
 </resources>

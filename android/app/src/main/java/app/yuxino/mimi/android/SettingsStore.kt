@@ -162,7 +162,8 @@ object SettingsStore {
                 savedPrior?.withIndependentXaiTranslation() else savedPrior
             val selected = if (translationEnabled == false) TextTranslationProvider.BUILTIN else translation?.provider
                 ?: prior?.selectedTranslation ?: if (config.provider == app.yuxino.mimi.android.provider.ServiceProvider.XAI && config.usesIndependentTextTranslation)
-                    TextTranslationProvider.XAI else if (config.provider.supportsSpeechTranslationMode) TextTranslationProvider.OPENAI_COMPATIBLE
+                    TextTranslationProvider.XAI else if (config.provider == app.yuxino.mimi.android.provider.ServiceProvider.CUSTOM_OPENAI) TextTranslationProvider.NONE
+                    else if (config.provider.supportsSpeechTranslationMode) TextTranslationProvider.OPENAI_COMPATIBLE
                     else TextTranslationProvider.BUILTIN
             if (config.usesIndependentTextTranslation && translation != null && selected !in setOf(TextTranslationProvider.BUILTIN, TextTranslationProvider.NONE)) {
                 validateTranslationConfiguration(translation)

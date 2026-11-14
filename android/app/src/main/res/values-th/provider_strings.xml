@@ -9,6 +9,7 @@
     <string name="guide_detail_tencent">Tencent Cloud รู้จำเสียงและแปลแบบเรียลไทม์\nไม่สามารถเปลี่ยนเฉพาะบริการแปลได้</string>
     <string name="guide_detail_baidu">Baidu รู้จำเสียงและแปลแบบเรียลไทม์\nไม่สามารถเปลี่ยนเฉพาะบริการแปลได้</string>
     <string name="guide_detail_xai">ใช้การรู้จำเสียงสตรีมมิงของ xAI กับบริการแปลข้อความที่เลือกแยกกันได้\nหรือเลือก Grok Voice ที่แปลหลังช่วงหยุดพูด</string>
+    <string name="guide_detail_custom_openai">เชื่อมต่อบริการเสียงแบบกำหนดเองที่รองรับการถอดเสียงแบบ OpenAI Realtime\nกรอกที่อยู่และโมเดลรู้จำเสียง ส่วนบริการแปลข้อความเลือกแยกต่างหาก</string>
     <string name="guide_help_dashscope">เปิดใช้ Model Studio และสร้าง API Key การแปลพร้อมเสียงต้องใช้ ID เวิร์กสเปซปักกิ่งด้วย</string>
     <string name="guide_help_openai">สร้างโปรเจ็กต์และ API key ของ OpenAI ที่เข้าถึง Realtime ได้ การสมัคร ChatGPT ไม่รวมการใช้ API</string>
     <string name="guide_help_gemini">สร้าง Gemini API key ใน Google AI Studio และตรวจสอบว่าโปรเจ็กต์ใช้ Live API ได้</string>
@@ -17,6 +18,7 @@
     <string name="guide_help_tencent">การแปลเสียงแบบเรียลไทม์ต้องใช้ AppID และคู่ SecretID / SecretKey จากบัญชีเดียวกัน หา AppID ที่ข้อมูลบัญชี ไม่ใช่ UIN และหาคู่คีย์ที่ CAM API Keys เปิดบริการในคอนโซล ASR API key ของโมเดล Hunyuan เพียงคีย์เดียวใช้ยืนยันตัวตนกับ API นี้ไม่ได้ ต้องเปิดการชำระเงินตามการใช้งานเอง</string>
     <string name="guide_help_baidu">สร้างแอป Machine Translation ใน Baidu AI Cloud ที่เข้าถึงการแปลเสียงเรียลไทม์ได้ AppKey หมายถึง API Key ของแอป ไม่ใช่ Secret Key</string>
     <string name="guide_help_xai">รับ API key ในคอนโซล xAI และตรวจสอบสิทธิ์กับเครดิตของโมเดล xAI ที่ใช้ บันทึกคีย์สำหรับการแปลข้อความ Grok แยกต่างหาก โดยกรอกคีย์เดิมที่ใช้รู้จำเสียงซ้ำได้ หรือใช้คนละคีย์ก็ได้</string>
+    <string name="guide_help_custom_openai">กรอกที่อยู่ WebSocket แบบเต็มที่บริการให้มา (wss:// ไม่มีพารามิเตอร์ query) รหัสโมเดลรู้จำเสียง และ API Key บริการต้องรองรับ PCM16 โมโน 24 kHz พร้อม session.update input_audio_buffer และเหตุการณ์ transcription อนุญาต ws:// เฉพาะที่อยู่ภายในเครื่อง API Key จะถูกเก็บในพื้นที่จัดเก็บที่ปลอดภัยของโทรศัพท์</string>
     <string name="profiles_alibaba_mode">การรู้จำและแปล</string>
     <string name="profiles_alibaba_asr_mt">ASR + MT</string>
     <string name="profiles_alibaba_live">แปลพร้อมเสียง</string>

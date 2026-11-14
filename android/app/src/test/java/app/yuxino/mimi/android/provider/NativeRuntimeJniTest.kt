@@ -455,7 +455,7 @@ class NativeRuntimeJniTest {
 
     private fun configuration(provider: ServiceProvider = ServiceProvider.DASHSCOPE): JSONObject {
         val values = provider.fields.associate { field -> field.id to when (field.id) {
-            "endpoint" -> "https://synthetic.openai.azure.com"
+            "endpoint" -> if (provider == ServiceProvider.CUSTOM_OPENAI) "wss://synthetic.example/v1/realtime" else "https://synthetic.openai.azure.com"
             "appId" -> "123456789"
             else -> "synthetic-${field.id}"
         } }

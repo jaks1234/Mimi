@@ -165,6 +165,24 @@
         "ru": "Используйте потоковое распознавание речи xAI с отдельным сервисом перевода текста на ваш выбор.\nGrok Voice также может переводить после пауз в речи."
       }
     },
+    "providerCustomOpenAIDescription": {
+      "scope": [
+        "android"
+      ],
+      "androidResource": "guide_detail_custom_openai",
+      "desktopSetting": "",
+      "translations": {
+        "zh": "接入兼容 OpenAI Realtime 独立转写的自定义语音服务。\n填写地址与识别模型，文字翻译服务单独选择。",
+        "zh-TW": "接入相容 OpenAI Realtime 獨立轉錄的自訂語音服務。\n填寫位址與辨識模型，文字翻譯服務另行選擇。",
+        "en": "Connect a custom speech service compatible with OpenAI Realtime transcription.\nEnter the address and recognition model; choose a separate text translator.",
+        "ja": "OpenAI Realtime 文字起こし互換のカスタム音声サービスに接続します。\nアドレスと認識モデルを入力し、テキスト翻訳サービスは別途選択します。",
+        "de": "Verbindet einen benutzerdefinierten Sprachdienst, der mit OpenAI Realtime Transkription kompatibel ist.\nAdresse und Erkennungsmodell eintragen; den Textübersetzer separat wählen.",
+        "ko": "OpenAI Realtime 전사와 호환되는 사용자 지정 음성 서비스를 연결합니다.\n주소와 인식 모델을 입력하고 텍스트 번역 서비스는 별도로 선택합니다.",
+        "fr": "Connecte un service vocal personnalisé compatible avec la transcription OpenAI Realtime.\nSaisissez l'adresse et le modèle de reconnaissance ; le traducteur de texte se choisit séparément.",
+        "th": "เชื่อมต่อบริการเสียงแบบกำหนดเองที่รองรับการถอดเสียงแบบ OpenAI Realtime\nกรอกที่อยู่และโมเดลรู้จำเสียง ส่วนบริการแปลข้อความเลือกแยกต่างหาก",
+        "ru": "Подключает пользовательский голосовой сервис, совместимый с транскрипцией OpenAI Realtime.\nВведите адрес и модель распознавания; переводчик текста выбирается отдельно."
+      }
+    },
     "providerAlibabaSetup": {
       "scope": [
         "android"
@@ -308,6 +326,24 @@
         "fr": "Obtenez une clé API dans la console xAI et vérifiez l’accès et les crédits des modèles xAI utilisés. Enregistrez séparément la clé de traduction de texte Grok ; vous pouvez réutiliser la clé existante de reconnaissance ou utiliser des clés différentes.",
         "th": "รับ API key ในคอนโซล xAI และตรวจสอบสิทธิ์กับเครดิตของโมเดล xAI ที่ใช้ บันทึกคีย์สำหรับการแปลข้อความ Grok แยกต่างหาก โดยกรอกคีย์เดิมที่ใช้รู้จำเสียงซ้ำได้ หรือใช้คนละคีย์ก็ได้",
         "ru": "Получите API-ключ в xAI Console и проверьте доступ и кредиты для используемых моделей xAI. Сохраните ключ для перевода текста Grok отдельно: можно использовать тот же ключ, что и для распознавания, или разные ключи."
+      }
+    },
+    "providerCustomOpenAISetup": {
+      "scope": [
+        "android"
+      ],
+      "androidResource": "guide_help_custom_openai",
+      "desktopSetting": "",
+      "translations": {
+        "zh": "填入服务提供的完整 WebSocket 地址（wss://，不含查询参数）、识别模型 ID 和 API Key。服务需支持 24 kHz 单声道 PCM16 与 session.update、input_audio_buffer、transcription 事件；仅本机地址允许 ws://。API Key 保存在手机安全存储。",
+        "zh-TW": "填入服務提供的完整 WebSocket 位址（wss://，不含查詢參數）、辨識模型 ID 和 API Key。服務需支援 24 kHz 單聲道 PCM16 與 session.update、input_audio_buffer、transcription 事件；僅迴路位址允許 ws://。API Key 儲存在手機安全儲存。",
+        "en": "Enter the full WebSocket address provided by the service (wss://, no query parameters), the recognition model ID and an API Key. The service must support 24 kHz mono PCM16 with session.update, input_audio_buffer and transcription events; ws:// is only allowed for local addresses. The API Key is stored in secure storage on this phone.",
+        "ja": "サービスが提供する完全な WebSocket アドレス（wss://、クエリパラメーターなし）、認識モデル ID、API キーを入力します。サービスは 24 kHz モノラル PCM16 と session.update、input_audio_buffer、transcription イベントに対応している必要があります。ws:// はローカルアドレスのみ許可されます。API キーは端末のセキュアストレージに保存されます。",
+        "de": "Vollständige WebSocket-Adresse des Dienstes (wss://, ohne Abfrageparameter), Erkennungsmodell-ID und API-Key eingeben. Der Dienst muss 24-kHz-Mono-PCM16 sowie session.update, input_audio_buffer und Transcription-Ereignisse unterstützen; ws:// ist nur für lokale Adressen erlaubt. Der API-Key wird im sicheren Speicher des Telefons abgelegt.",
+        "ko": "서비스에서 제공하는 전체 WebSocket 주소(wss://, 쿼리 매개변수 없음), 인식 모델 ID, API 키를 입력합니다. 서비스는 24 kHz 모노 PCM16과 session.update, input_audio_buffer, transcription 이벤트를 지원해야 합니다. ws://는 로컬 주소만 허용됩니다. API 키는 휴대전화 보안 저장소에 저장됩니다.",
+        "fr": "Saisissez l'adresse WebSocket complète fournie par le service (wss://, sans paramètres de requête), l'ID du modèle de reconnaissance et une clé API. Le service doit prendre en charge le PCM16 mono 24 kHz avec session.update, input_audio_buffer et les événements transcription ; ws:// n'est autorisé que pour les adresses locales. La clé API est stockée dans le stockage sécurisé du téléphone.",
+        "th": "กรอกที่อยู่ WebSocket แบบเต็มที่บริการให้มา (wss:// ไม่มีพารามิเตอร์ query) รหัสโมเดลรู้จำเสียง และ API Key บริการต้องรองรับ PCM16 โมโน 24 kHz พร้อม session.update input_audio_buffer และเหตุการณ์ transcription อนุญาต ws:// เฉพาะที่อยู่ภายในเครื่อง API Key จะถูกเก็บในพื้นที่จัดเก็บที่ปลอดภัยของโทรศัพท์",
+        "ru": "Введите полный WebSocket-адрес, предоставленный сервисом (wss://, без параметров запроса), идентификатор модели распознавания и API-ключ. Сервис должен поддерживать PCM16 моно 24 кГц и события session.update, input_audio_buffer и transcription; ws:// допускается только для локальных адресов. API-ключ хранится в защищённом хранилище телефона."
       }
     },
     "alibabaModeLabel": {

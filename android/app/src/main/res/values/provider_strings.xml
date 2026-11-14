@@ -9,6 +9,7 @@
     <string name="guide_detail_tencent">Tencent Cloud recognizes and translates speech in real time.\nThe translation service cannot be changed separately.</string>
     <string name="guide_detail_baidu">Baidu recognizes and translates speech in real time.\nThe translation service cannot be changed separately.</string>
     <string name="guide_detail_xai">Use xAI streaming recognition with a separate text translator of your choice.\nGrok Voice is also available for translation after speech pauses.</string>
+    <string name="guide_detail_custom_openai">Connect a custom speech service compatible with OpenAI Realtime transcription.\nEnter the address and recognition model; choose a separate text translator.</string>
     <string name="guide_help_dashscope">Enable Model Studio and create an API key. Simultaneous translation also requires a Beijing workspace ID.</string>
     <string name="guide_help_openai">Create an OpenAI API project and key with Realtime access. ChatGPT subscriptions do not include API usage.</string>
     <string name="guide_help_gemini">Create a Gemini API key in Google AI Studio and check Live API availability for your project.</string>
@@ -17,6 +18,7 @@
     <string name="guide_help_tencent">Realtime speech translation requires your account AppID and a SecretID / SecretKey pair from the same account. Find AppID on Account Information, not UIN; find the pair on CAM API Keys. Enable the service in the ASR console. A single Hunyuan model API key cannot authenticate this API. Pay-as-you-go must be enabled explicitly.</string>
     <string name="guide_help_baidu">Create a Machine Translation app in Baidu AI Cloud with realtime speech translation access. AppKey means the app\'s API Key, not Secret Key.</string>
     <string name="guide_help_xai">Get an API key in xAI Console and check access and credits for the xAI models you use. Save the Grok text translation key separately; you may enter the same existing key as recognition or use different keys.</string>
+    <string name="guide_help_custom_openai">Enter the full WebSocket address provided by the service (wss://, no query parameters), the recognition model ID and an API Key. The service must support 24 kHz mono PCM16 with session.update, input_audio_buffer and transcription events; ws:// is only allowed for local addresses. The API Key is stored in secure storage on this phone.</string>
     <string name="profiles_alibaba_mode">Recognition and translation</string>
     <string name="profiles_alibaba_asr_mt">ASR + MT</string>
     <string name="profiles_alibaba_live">Simultaneous translation</string>
