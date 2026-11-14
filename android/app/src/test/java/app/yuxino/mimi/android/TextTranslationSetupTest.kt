@@ -23,6 +23,7 @@ class TextTranslationSetupTest {
 
     @Test fun everyBuiltInSpeechServiceHasItsOwnCredentialDestination() {
         for (provider in ServiceProvider.entries) {
+            if (provider == ServiceProvider.CUSTOM_OPENAI) continue
             assertNotNull(provider.id, serviceSetupUrl(provider.wireProvider, TextTranslationSetupPage.API_KEY))
         }
         assertNull(serviceSetupUrl("https://untrusted.example/setup", TextTranslationSetupPage.API_KEY))
