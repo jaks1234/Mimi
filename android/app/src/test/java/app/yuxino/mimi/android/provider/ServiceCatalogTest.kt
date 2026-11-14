@@ -63,8 +63,9 @@ class ServiceCatalogTest {
         assertEquals("custom-key", credentials.getString("apiKey"))
         // Without a translator the captions stay original; any configured text route is independent.
         assertEquals(listOf("original"), ServiceProvider.CUSTOM_OPENAI.targets)
-        assertTrue(ServiceProvider.CUSTOM_OPENAI.originalOnly(TextTranslationProvider.NONE))
-        assertFalse(ServiceProvider.CUSTOM_OPENAI.originalOnly(TextTranslationProvider.OPENAI_COMPATIBLE))
+        // The public contract: no translator means original-only captions.
+        assertTrue(speech.originalOnly(TextTranslationProvider.NONE))
+        assertFalse(speech.originalOnly(TextTranslationProvider.OPENAI_COMPATIBLE))
         assertEquals("simultaneous", speech.speechTranslationMode)
     }
     @Test fun credentialsDoNotLeakThroughObjectDiagnostics() {
